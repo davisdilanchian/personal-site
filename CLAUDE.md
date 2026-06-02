@@ -14,7 +14,7 @@ Maintaining Davis Dilanchian's personal projects landing page — a static showc
 
 ## Hosting
 
-- **Repo:** `https://github.com/ddilanchi/personal-site` (public — required for free GitHub Pages with custom domain).
+- **Repo:** `https://github.com/davisdilanchian/personal-site` (public — required for free GitHub Pages with custom domain).
 - **GitHub Pages source:** `master` branch, root path `/`.
 - This mirrors the Dandle setup (apex custom domain via CNAME file, served from master).
 
@@ -23,7 +23,7 @@ Maintaining Davis Dilanchian's personal projects landing page — a static showc
 Apex domain points at GitHub Pages via these records:
 - 4× `A` @ → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
 - 4× `AAAA` @ → `2606:50c0:8000::153`, `:8001::153`, `:8002::153`, `:8003::153`
-- 1× `CNAME` www → `ddilanchi.github.io.`
+- 1× `CNAME` www → `davisdilanchian.github.io.`
 
 ## Workflow
 

@@ -39,7 +39,7 @@ push — GitHub Pages redeploys automatically.
 - `assets/figures/` — grayscale esoteric diagrams used as "exhibits."
 - `assets/paper-noise.png`, `assets/speckle.png` — photocopy paper texture.
 
-Contact channels live in the `SOCIALS` array (`@davisdilanchian` everywhere; GitHub is `ddilanchi`).
+Contact channels live in the `SOCIALS` array (`@davisdilanchian` everywhere; GitHub is `davisdilanchian`).
 
 ## Hosting
 
