@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Davis Dilanchian — Projects</title>
+<meta name="description" content="Things Davis Dilanchian is building — apps, tools, and experiments, updated as they ship." />
+
+<!-- Open Graph / social preview -->
+<meta property="og:title" content="Davis Dilanchian — Projects" />
+<meta property="og:description" content="Things I'm building — apps, tools, and experiments." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://davisdilanchian.com/" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --bg: #0b0c10;
+    --bg-soft: #14161c;
+    --card: #15171e;
+    --card-hover: #1b1e27;
+    --border: #262a35;
+    --border-hover: #3a4151;
+    --text: #e8eaf0;
+    --muted: #9aa1b1;
+    --faint: #6b7280;
+    --accent: #7c9cff;
+    --accent-soft: rgba(124, 156, 255, 0.12);
+    --radius: 16px;
+    --maxw: 1080px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* subtle gradient glow at top */
+  body::before {
+    content: "";
+    position: fixed;
+    top: -30vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90vw;
+    height: 60vh;
+    background: radial-gradient(ellipse at center, rgba(124, 156, 255, 0.10), transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wrap { position: relative; z-index: 1; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+  /* ---------- Header ---------- */
+  header { padding: 80px 0 48px; }
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+
+  h1 {
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    margin-bottom: 20px;
+  }
+
+  .tagline {
+    font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+    color: var(--muted);
+    max-width: 620px;
+    font-weight: 400;
+  }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 32px;
+  }
+
+  .link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 100px;
+    border: 1px solid var(--border);
+    background: var(--bg-soft);
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: border-color 0.18s ease, background 0.18s ease, transform 0.18s ease;
+  }
+  .link-btn:hover { border-color: var(--border-hover); background: var(--card-hover); transform: translateY(-1px); }
+
+  /* ---------- Section ---------- */
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin: 56px 0 24px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .section-head h2 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--text);
+  }
+  .count {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--faint);
+  }
+
+  /* ---------- Filters ---------- */
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+  .chip {
+    font-size: 13px;
+    padding: 6px 14px;
+    border-radius: 100px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.16s ease;
+    font-family: inherit;
+  }
+  .chip:hover { border-color: var(--border-hover); color: var(--text); }
+  .chip.active { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+
+  /* ---------- Grid ---------- */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 18px;
+    padding-bottom: 80px;
+  }
+
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+  }
+  .card:hover { border-color: var(--border-hover); background: var(--card-hover); transform: translateY(-3px); }
+
+  .card-top { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+
+  .card-icon {
+    flex: 0 0 auto;
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    font-size: 22px;
+    background: var(--accent-soft);
+    border: 1px solid var(--border);
+  }
+
+  .card-title { font-size: 1.15rem; font-weight: 700; letter-spacing: -0.01em; }
+  .card-status {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--faint);
+    margin-top: 2px;
+  }
+  .dot {
+    display: inline-block; width: 7px; height: 7px; border-radius: 50%;
+    background: #34d399; margin-right: 6px; vertical-align: middle;
+  }
+  .dot.beta { background: #fbbf24; }
+  .dot.wip { background: #60a5fa; }
+
+  .card-desc { color: var(--muted); font-size: 0.94rem; flex-grow: 1; }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 16px 0 0; }
+  .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--faint);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 2px 8px;
+  }
+
+  .card-links { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--border); }
+  .card-links a {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--accent);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: opacity 0.16s ease;
+  }
+  .card-links a:hover { opacity: 0.75; }
+  .card-links a::after { content: "↗"; font-size: 11px; opacity: 0.6; }
+
+  /* ---------- Footer ---------- */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 0 60px;
+    color: var(--faint);
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--text); }
+
+  @media (max-width: 600px) {
+    header { padding: 56px 0 32px; }
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="eyebrow">Davis Dilanchian</div>
+      <h1>Things I'm building.</h1>
+      <p class="tagline">A running list of the apps, tools, and experiments I'm working on at any given time. Some shipped, some in beta, some still cooking.</p>
+      <div class="links">
+        <a class="link-btn" href="mailto:ddilanchian@gmail.com">✉️ Email</a>
+        <a class="link-btn" href="https://github.com/ddilanchi" target="_blank" rel="noopener">⌨️ GitHub</a>
+      </div>
+    </header>
+
+    <div class="section-head">
+      <h2>Projects</h2>
+      <span class="count" id="count"></span>
+    </div>
+
+    <div class="filters" id="filters"></div>
+
+    <div class="grid" id="grid"></div>
+
+    <footer>
+      <span>© <span id="year"></span> Davis Dilanchian</span>
+      <span>Built with plain HTML · hosted on GitHub Pages</span>
+    </footer>
+  </div>
+
+<script>
+/* ============================================================
+   PROJECTS — edit this array to add/remove/update projects.
+   status: "live" | "beta" | "wip"
+   links:  array of { label, url }
+   tags:   short keywords, shown as chips + used for filtering
+   ============================================================ */
+const PROJECTS = [
+  {
+    name: "Mugula",
+    icon: "💬",
+    status: "beta",
+    category: "iOS",
+    desc: "Native iMessage app with Snapchat-style photo & video editing — stickers, drawing, captions, and face filters, sent at full resolution.",
+    tags: ["Swift", "iMessage", "Camera"],
+    links: [{ label: "TestFlight", url: "https://testflight.apple.com/" }]
+  },
+  {
+    name: "Pareto",
+    icon: "📊",
+    status: "live",
+    category: "iOS",
+    desc: "An app for getting the 20% that matters most — productivity reimagined around the Pareto principle.",
+    tags: ["iOS", "Productivity"],
+    links: []
+  },
+  {
+    name: "Neon Forest",
+    icon: "🌲",
+    status: "live",
+    category: "Web",
+    desc: "Custom Shopify storefront for Neon Forest Industries — design, build, and product line for laser-stippled gear.",
+    tags: ["Shopify", "Storefront"],
+    links: [{ label: "neonforestindustries.com", url: "https://neonforestindustries.com" }]
+  },
+  {
+    name: "Dandle",
+    icon: "🎲",
+    status: "live",
+    category: "Web",
+    desc: "A 3D word-building physics game — stack and topple letter tiles to form words. Built for a game jam.",
+    tags: ["Game", "Three.js", "Physics"],
+    links: [{ label: "dandle.online", url: "https://dandle.online" }]
+  },
+  {
+    name: "DanAcademy",
+    icon: "🎓",
+    status: "wip",
+    category: "iOS",
+    desc: "Adaptive learning app (Math Academy-style): a prerequisite skill-tree, spaced & interleaved review with FSRS scheduling, and a content pipeline that turns sources into atomic skills.",
+    tags: ["SwiftUI", "Learning", "FSRS"],
+    links: []
+  },
+  {
+    name: "Somniac",
+    icon: "⏰",
+    status: "wip",
+    category: "iOS",
+    desc: "An alarm app built for sleep disorders — challenge modules to actually wake up, post-dismissal monitoring, medication timing, nap management, and circadian shift tools.",
+    tags: ["iOS", "Health", "Sleep"],
+    links: []
+  },
+  {
+    name: "Dannify",
+    icon: "🎵",
+    status: "wip",
+    category: "Web",
+    desc: "Spotify playlist builder with LLM-powered search and curation — create and manage playlists with natural language, multi-user OAuth.",
+    tags: ["Spotify", "LLM", "OAuth"],
+    links: []
+  },
+  {
+    name: "CardSnap",
+    icon: "📇",
+    status: "wip",
+    category: "iOS",
+    desc: "Business card scanner that auto-captures at a quality threshold, extracts contacts with AI, and exports to JSON/CSV with full batch history.",
+    tags: ["iOS", "AI", "OCR"],
+    links: []
+  },
+  {
+    name: "WinWhisper",
+    icon: "🎙️",
+    status: "live",
+    category: "Tools",
+    desc: "Local Whisper-based dictation for Windows — a faster, private replacement for Win+H that runs entirely on-device.",
+    tags: ["Windows", "Whisper", "Open Source"],
+    links: [{ label: "GitHub", url: "https://github.com/ddilanchi/WinWhisper" }]
+  },
+  {
+    name: "Pinterest Board Downloader",
+    icon: "📌",
+    status: "live",
+    category: "Tools",
+    desc: "Chrome extension that downloads an entire Pinterest board as a zip of original-resolution images using your logged-in session.",
+    tags: ["Chrome", "Extension"],
+    links: []
+  }
+];
+
+/* ---------- Render ---------- */
+const grid = document.getElementById('grid');
+const filtersEl = document.getElementById('filters');
+const countEl = document.getElementById('count');
+const statusLabel = { live: "Live", beta: "Beta", wip: "In progress" };
+const statusDot = { live: "", beta: "beta", wip: "wip" };
+
+let activeFilter = "All";
+const categories = ["All", ...Array.from(new Set(PROJECTS.map(p => p.category)))];
+
+function renderFilters() {
+  filtersEl.innerHTML = categories.map(c =>
+    `<button class="chip ${c === activeFilter ? 'active' : ''}" data-cat="${c}">${c}</button>`
+  ).join('');
+  filtersEl.querySelectorAll('.chip').forEach(btn => {
+    btn.addEventListener('click', () => { activeFilter = btn.dataset.cat; renderFilters(); renderGrid(); });
+  });
+}
+
+function renderGrid() {
+  const list = activeFilter === "All" ? PROJECTS : PROJECTS.filter(p => p.category === activeFilter);
+  countEl.textContent = `${list.length} project${list.length === 1 ? '' : 's'}`;
+  grid.innerHTML = list.map(p => `
+    <article class="card">
+      <div class="card-top">
+        <div class="card-icon">${p.icon}</div>
+        <div>
+          <div class="card-title">${p.name}</div>
+          <div class="card-status"><span class="dot ${statusDot[p.status]}"></span>${statusLabel[p.status]}</div>
+        </div>
+      </div>
+      <p class="card-desc">${p.desc}</p>
+      ${p.tags?.length ? `<div class="tags">${p.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>` : ''}
+      ${p.links?.length ? `<div class="card-links">${p.links.map(l => `<a href="${l.url}" target="_blank" rel="noopener">${l.label}</a>`).join('')}</div>` : ''}
+    </article>
+  `).join('');
+}
+
+document.getElementById('year').textContent = new Date().getFullYear();
+renderFilters();
+renderGrid();
+</script>
+</body>
+</html>
