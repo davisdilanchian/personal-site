@@ -15,211 +15,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
 
-<style>
-  :root {
-    --desk: #1a1815;
-    --paper: #e9e3d2;
-    --paper-edge: #ddd6c2;
-    --ink: #2a2620;
-    --ink-soft: #4a443a;
-    --faint: #87806e;
-    --rule: #b9b09a;
-    --rule-dark: #8c8470;
-    --stamp: #9a1f17;
-    --stamp2: #1c3a6e;
-    --type: 'Courier Prime', 'Courier New', monospace;
-    --stampfont: 'Special Elite', 'Courier Prime', monospace;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: var(--type);
-    background: var(--desk);
-    color: var(--ink);
-    line-height: 1.6;
-    padding: 28px 14px 60px;
-    background-image: radial-gradient(120% 80% at 50% 0%, #25221d, #131110 80%);
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ===== THE SHEET ===== */
-  .sheet {
-    position: relative;
-    max-width: 900px; margin: 0 auto;
-    background: var(--paper);
-    background-image:
-      url('assets/speckle.png'),
-      url('assets/paper-noise.png'),
-      linear-gradient(180deg, #ece6d6, #e6e0ce);
-    background-size: 400px 400px, 220px 220px, 100% 100%;
-    box-shadow: 0 24px 60px rgba(0,0,0,0.6), 0 2px 0 var(--paper-edge);
-    padding: 44px 50px 40px;
-    border: 1px solid #cbc3ad;
-  }
-  /* photocopy vignette + edge grime */
-  .sheet::after {
-    content:""; position:absolute; inset:0; pointer-events:none;
-    box-shadow: inset 0 0 90px rgba(60,52,38,0.18), inset 0 0 14px rgba(40,34,22,0.12);
-    mix-blend-mode: multiply;
-  }
-
-  a { color: inherit; }
-
-  /* ===== CLASSIFICATION BANNERS ===== */
-  .classbar {
-    text-align: center; font-family: var(--stampfont);
-    letter-spacing: 0.42em; font-size: 17px; color: var(--ink);
-    border-top: 3px solid var(--ink); border-bottom: 3px solid var(--ink);
-    padding: 5px 0; margin-bottom: 4px; font-weight: 700;
-  }
-  .classbar.redacted-bar { letter-spacing: 0.2em; font-size: 14px; }
-  .classbar .small { font-size: 11px; letter-spacing: 0.2em; color: var(--ink-soft); }
-
-  /* ===== CONTROL HEADER ===== */
-  .control {
-    display: flex; justify-content: space-between; gap: 20px;
-    font-size: 11px; letter-spacing: 0.04em; color: var(--ink-soft);
-    margin: 12px 0; text-transform: uppercase;
-  }
-  .control .col { line-height: 1.7; }
-  .control b { color: var(--ink); }
-  .control .col.r { text-align: right; }
-
-  .hr { border: none; border-top: 1.5px solid var(--ink); margin: 14px 0; }
-  .hr.thin { border-top: 1px solid var(--rule); }
-  .hr.dbl { border-top: 3px double var(--ink); }
-
-  /* ===== STAMPS ===== */
-  .stamp {
-    position: absolute; font-family: var(--stampfont);
-    color: var(--stamp); border: 4px solid var(--stamp);
-    padding: 6px 16px; font-size: 30px; letter-spacing: 0.06em;
-    border-radius: 6px; text-transform: uppercase; font-weight: 700;
-    opacity: 0.82; mix-blend-mode: multiply; pointer-events: none;
-    box-shadow: inset 0 0 0 2px rgba(154,31,23,0.25);
-    text-shadow: 1px 1px 0 rgba(154,31,23,0.15);
-  }
-  .stamp.declassified { top: 90px; right: 22px; transform: rotate(-11deg); }
-  .stamp.eyes { top: 330px; left: 18px; transform: rotate(7deg); font-size: 18px; border-width:3px; }
-  .stamp.release {
-    position: static; display: inline-block; transform: rotate(-1.5deg);
-    color: var(--stamp2); border-color: var(--stamp2); font-size: 12px;
-    letter-spacing: 0.05em; padding: 5px 10px; margin: 6px 0; line-height: 1.3;
-    box-shadow: inset 0 0 0 2px rgba(28,58,110,0.2);
-  }
-
-  /* ===== TITLE BLOCK ===== */
-  .titleblock { margin: 16px 0 6px; }
-  .titleblock .re { font-size: 12px; letter-spacing: 0.12em; color: var(--ink-soft); text-transform: uppercase; }
-  .titleblock h1 {
-    font-family: var(--stampfont); font-weight: 700;
-    font-size: clamp(1.7rem, 4.6vw, 2.7rem); letter-spacing: 0.02em;
-    line-height: 1.12; margin: 6px 0 4px; text-transform: uppercase;
-  }
-  .abstract { font-size: 13.5px; margin: 14px 0; max-width: 60ch; }
-  .abstract .fld { color: var(--faint); }
-
-  /* exhibit figure in header */
-  .header-grid { display: grid; grid-template-columns: 1fr 168px; gap: 24px; align-items: start; }
-  .exhibit {
-    border: 1px solid var(--ink); padding: 6px; background: #f4efe0;
-    transform: rotate(1.4deg); box-shadow: 2px 3px 6px rgba(0,0,0,0.25);
-  }
-  .exhibit img { width: 100%; display: block; filter: contrast(1.05); mix-blend-mode: multiply; }
-  .exhibit .cap { font-size: 9.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); padding: 5px 2px 1px; text-align: center; }
-
-  /* ===== REDACTION ===== */
-  .redact {
-    background: #16140f; color: transparent; border-radius: 1px;
-    padding: 0 3px; box-decoration-break: clone; -webkit-box-decoration-break: clone;
-    cursor: help; transition: color .12s, background .12s; user-select: none;
-    text-shadow: none;
-  }
-  .redact:hover { background: #d8cfb6; color: var(--stamp); }
-  .redact::selection { background: transparent; }
-
-  /* ===== DOSSIER / FILTER ===== */
-  .sec {
-    font-family: var(--stampfont); font-size: 13px; letter-spacing: 0.16em;
-    text-transform: uppercase; margin: 26px 0 6px; display:flex; align-items:center; gap:12px;
-  }
-  .sec .ln { flex:1; height:0; border-top:1.5px solid var(--ink); }
-  .sec .ct { font-family: var(--type); font-size: 11px; color: var(--ink-soft); letter-spacing: 0.06em; }
-
-  .filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 22px; }
-  .tab {
-    font-family: var(--type); font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase;
-    background: transparent; border: 1.5px solid var(--ink); color: var(--ink);
-    padding: 4px 12px; cursor: pointer;
-  }
-  .tab::before { content:"[ "; } .tab::after { content:" ]"; }
-  .tab:hover { background: rgba(40,34,22,0.07); }
-  .tab.active { background: var(--ink); color: var(--paper); }
-
-  /* ===== FILE ENTRIES ===== */
-  .file { position: relative; padding: 18px 0 22px; border-top: 1.5px solid var(--ink); }
-  .file:first-of-type { border-top: 3px double var(--ink); }
-  .file-grid { display: grid; grid-template-columns: 118px 1fr; gap: 22px; align-items: start; }
-
-  .file-exhibit {
-    border: 1px solid var(--ink); padding: 5px; background: #f4efe0;
-    box-shadow: 2px 3px 5px rgba(0,0,0,0.2);
-  }
-  .file-exhibit img { width: 100%; display: block; mix-blend-mode: multiply; }
-  .file-exhibit .cap { font-size: 9px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); padding: 4px 1px 0; text-align: center; }
-  .file:nth-child(odd) .file-exhibit { transform: rotate(-1.6deg); }
-  .file:nth-child(even) .file-exhibit { transform: rotate(1.6deg); }
-
-  .file-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 2px; }
-  .fileno { font-family: var(--stampfont); font-size: 13px; letter-spacing: 0.06em; }
-  .subj { font-family: var(--stampfont); font-size: 1.3rem; letter-spacing: 0.03em; text-transform: uppercase; }
-  .meta-row { font-size: 11px; letter-spacing: 0.05em; color: var(--ink-soft); text-transform: uppercase; margin: 6px 0 10px; }
-  .badge {
-    display: inline-block; border: 1.5px solid; padding: 1px 7px; font-size: 10.5px;
-    letter-spacing: 0.08em; font-family: var(--stampfont); transform: rotate(-1deg); margin-left: 2px;
-  }
-  .b-live { color: var(--stamp); border-color: var(--stamp); }
-  .b-beta { color: #8a5a08; border-color: #8a5a08; }
-  .b-wip  { color: var(--stamp2); border-color: var(--stamp2); }
-
-  .summary { font-size: 13.5px; margin-bottom: 10px; }
-  .summary .lbl, .caps .lbl, .dispo .lbl { font-weight: 700; }
-  .caps { font-size: 12.5px; margin-bottom: 6px; }
-  .caps .dot { color: var(--faint); margin: 0 5px; }
-  .dispo { font-size: 12.5px; }
-  .dispo a { color: var(--stamp2); text-decoration: underline; text-underline-offset: 2px; }
-  .dispo a:hover { background: rgba(28,58,110,0.08); }
-
-  /* ===== FOOTER / CONTACT ===== */
-  .contact { margin-top: 30px; }
-  .contact .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 30px; font-size: 12.5px; margin-top: 12px; }
-  .contact .line { display: flex; align-items: center; gap: 6px; border-bottom: 1px dotted var(--rule); padding: 4px 0; }
-  .contact .line .k { text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-soft); font-size: 11px; min-width: 92px; }
-  .contact .line .dots { flex: 1; border-bottom: 1px dotted var(--rule); margin: 0 6px; height: 9px; }
-  .contact .line a { text-decoration: none; font-weight: 700; }
-  .contact .line a:hover { color: var(--stamp); }
-  .contact svg { width: 13px; height: 13px; fill: var(--ink); }
-
-  .footmeta {
-    display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap;
-    font-size: 10.5px; letter-spacing: 0.06em; color: var(--ink-soft);
-    text-transform: uppercase; margin-top: 18px;
-  }
-
-  .pagefoot { text-align: center; font-size: 10px; letter-spacing: 0.2em; color: var(--ink-soft); margin-top: 18px; text-transform: uppercase; }
-
-  @media (max-width: 680px) {
-    .sheet { padding: 30px 22px 30px; }
-    .header-grid { grid-template-columns: 1fr; }
-    .exhibit { max-width: 200px; margin: 4px auto 0; }
-    .file-grid { grid-template-columns: 84px 1fr; gap: 14px; }
-    .contact .grid2 { grid-template-columns: 1fr; }
-    .stamp.declassified { font-size: 22px; top: 60px; }
-    .control { flex-direction: column; gap: 6px; }
-    .control .col.r { text-align: left; }
-  }
-</style>
+<link rel="stylesheet" href="assets/dossier.css" />
 </head>
 <body>
   <div class="sheet">
@@ -323,43 +119,43 @@ const SOCIALS = [
    status: live | beta | wip
    ============================================================ */
 const PROJECTS = [
-  { name:"Mugula", icon:"assets/icons/doc/mugula.png", status:"live", category:"iOS", codename:"BLUE BUBBLE",
+  { name:"Mugula", slug:"mugula", icon:"assets/icons/doc/mugula.png", status:"live", category:"iOS", codename:"BLUE BUBBLE",
     summary:"Native iMessage app that brings Snapchat-style editing into your conversations — camera capture, drawing, emoji stickers, text captions, and ||real-time face filters||, all sent at full resolution.",
     caps:["Swift","iMessage","Camera FX"], dispo:[{label:"App Store", url:"https://apps.apple.com/us/app/mugula/id6762441648"}] },
 
-  { name:"Pareto", icon:"assets/icons/doc/pareto.png", status:"live", category:"iOS", codename:"SPLIT CHECK",
+  { name:"Pareto", slug:"pareto", icon:"assets/icons/doc/pareto.png", status:"live", category:"iOS", codename:"SPLIT CHECK",
     summary:"iOS bill-splitting app — scan a receipt with AI, assign items to each person, auto-split tax &amp; tip, and request payment via ||Venmo||.",
     caps:["SwiftUI","Gemini AI","Venmo"], dispo:[{label:"App Store", url:"https://apps.apple.com/us/app/pareto-bill-splitter-scan/id6738635819"}] },
 
-  { name:"Neon Forest", icon:"assets/icons/doc/neonforest.png", status:"live", category:"Web", codename:"REDWOOD",
+  { name:"Neon Forest", slug:"neon-forest", icon:"assets/icons/doc/neonforest.png", status:"live", category:"Web", codename:"REDWOOD",
     summary:"Custom Shopify storefront and brand for ||Neon Forest Industries|| — storefront design, theme development, and product line.",
     caps:["Shopify","Storefront","Branding"], dispo:[{label:"neonforestindustries.com", url:"https://neonforestindustries.com"}] },
 
-  { name:"Dandle", icon:"assets/icons/doc/dandle.png", status:"live", category:"Web", codename:"TOPPLE",
+  { name:"Dandle", slug:"dandle", icon:"assets/icons/doc/dandle.png", status:"live", category:"Web", codename:"TOPPLE",
     summary:"A 3D word-building physics game — build crossword-like structures from letter cubes on a checkerboard, then drop ||verb cubes|| that apply directional force to shove your structure into the end zone.",
     caps:["Three.js","Physics","Game"], dispo:[{label:"dandle.online", url:"https://dandle.online"}] },
 
-  { name:"DanAcademy", icon:"assets/icons/doc/danacademy.png", status:"wip", category:"iOS", codename:"TUTOR",
+  { name:"DanAcademy", slug:"danacademy", icon:"assets/icons/doc/danacademy.png", status:"wip", category:"iOS", codename:"TUTOR",
     summary:"Adaptive learning app (Math Academy-style): a prerequisite skill-tree with spaced &amp; interleaved review (||FSRS scheduling||) and a pipeline that turns source material into atomic, quality-gated skills.",
     caps:["SwiftUI","FSRS","EdTech"], dispo:[] },
 
-  { name:"Somniac", icon:"assets/icons/doc/somniac.png", status:"wip", category:"iOS", codename:"NIGHTWATCH",
+  { name:"Somniac", slug:"somniac", icon:"assets/icons/doc/somniac.png", status:"wip", category:"iOS", codename:"NIGHTWATCH",
     summary:"iOS alarm app built for ||sleep disorders|| (narcolepsy, IH, DSPD) — wake-up challenge modules, post-dismissal monitoring, medication timing, nap management, and circadian-shift tools.",
     caps:["iOS","Sleep","Health"], dispo:[] },
 
-  { name:"Dannify", icon:"assets/icons/doc/dannify.png", status:"wip", category:"Web", codename:"EARWORM",
+  { name:"Dannify", slug:"dannify", icon:"assets/icons/doc/dannify.png", status:"wip", category:"Web", codename:"EARWORM",
     summary:"Client-side Spotify playlist builder — search tracks, create and manage playlists via ||PKCE OAuth||, with LLM-powered curation (Claude / GPT / Gemini).",
     caps:["Spotify","LLM","OAuth"], dispo:[] },
 
-  { name:"CardSnap", icon:"assets/icons/doc/cardsnap.png", status:"wip", category:"iOS", codename:"ROLODEX",
+  { name:"CardSnap", slug:"cardsnap", icon:"assets/icons/doc/cardsnap.png", status:"wip", category:"iOS", codename:"ROLODEX",
     summary:"iOS business-card scanner — auto-captures when the card is in focus, extracts every contact field plus ||handwritten notes|| with Gemini AI, and exports to JSON/CSV.",
     caps:["SwiftUI","Gemini AI","OCR"], dispo:[] },
 
-  { name:"WinWhisper", icon:"assets/icons/doc/winwhisper.png", status:"live", category:"Tools", codename:"GHOSTKEY",
+  { name:"WinWhisper", slug:"winwhisper", icon:"assets/icons/doc/winwhisper.png", status:"live", category:"Tools", codename:"GHOSTKEY",
     summary:"Local Whisper-based dictation for Windows — a faster, fully ||on-device|| replacement for Win+H voice typing.",
     caps:["Whisper","Windows","Open Source"], dispo:[{label:"GitHub", url:"https://github.com/davisdilanchian/WinWhisper"}] },
 
-  { name:"Pinterest Board Downloader", icon:"assets/icons/doc/pinterest.png", status:"live", category:"Tools", codename:"DRAGNET",
+  { name:"Pinterest Board Downloader", slug:"pinterest", icon:"assets/icons/doc/pinterest.png", status:"live", category:"Tools", codename:"DRAGNET",
     summary:"Chrome extension (MV3) that downloads an entire Pinterest board as a zip of ||original-resolution|| images using your logged-in session.",
     caps:["Chrome MV3","ZIP Export"], dispo:[{label:"GitHub", url:"https://github.com/davisdilanchian/pinterest-board-downloader"}] },
 ];
@@ -396,13 +192,13 @@ function renderFiles(){
     <div class="file">
       <div class="file-grid">
         <div class="file-exhibit">
-          <img src="${p.icon}" alt="${p.name} exhibit" loading="lazy">
+          <a href="${p.slug}/"><img src="${p.icon}" alt="${p.name} exhibit" loading="lazy"></a>
           <div class="cap">EXHIBIT ${String.fromCharCode(66+i)}</div>
         </div>
         <div class="file-body">
           <div class="file-head">
             <span class="fileno">FILE NO. ${String(i+1).padStart(3,'0')}</span>
-            <span class="subj">${p.name}</span>
+            <a class="subj" href="${p.slug}/">${p.name}</a>
             <span class="badge ${scls}">${slabel}</span>
           </div>
           <div class="meta-row">CODENAME: "${p.codename}" · CLASSIFICATION: <span class="redact" title="declassify">${p.category}</span> · ORIGIN: SUBJECT</div>
@@ -412,6 +208,7 @@ function renderFiles(){
             p.dispo.length ? p.dispo.map(d=>`SEE — <a href="${d.url}" target="_blank" rel="noopener">${d.label}</a>`).join(' · ')
             : '<span class="redact" title="declassify">FIELD DEPLOYMENT PENDING</span>'
           }</div>
+          <a class="openfile" href="${p.slug}/">▸ Open Full Case File</a>
         </div>
       </div>
     </div>`;
