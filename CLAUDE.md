@@ -30,18 +30,6 @@ Apex domain points at GitHub Pages via these records:
 - Edit `index.html`, commit, push to `master`. GitHub Pages redeploys automatically (~1 min).
 - Keep the project list curated to **public / shippable** work. Personal/internal projects stay off the public page.
 
-## Private: `/canvas/`
-
-- Password-locked infinite-canvas workspace (Trello-style lists + notes; generic
-  object model for future embeds/tickers). NOT linked from the public page and kept
-  out of the `PROJECTS` array on purpose.
-- Client-side encrypted gate (StatiCrypt-style AES-GCM): `canvas/index.html` is a
-  generated loader holding only ciphertext — the plaintext app is never committed.
-  Edit via `canvas/tools/decrypt.mjs` → edit → `canvas/tools/build.mjs` (needs
-  `CANVAS_PASSWORD`).
-- Optional cross-device sync via a Cloudflare Worker + KV (`canvas/worker/`),
-  zero-knowledge (stores an opaque encrypted blob). See `canvas/README.md`.
-
 ## Completed
 
 - Initial site built and deployed; apex domain configured.
