@@ -1,14 +1,10 @@
-<!-- ============================================================
-     DRAFT privacy policy for Mugula — review for accuracy before
-     relying on it. Mugula is on-device; it collects nothing.
-     ============================================================ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Mugula — Privacy Policy</title>
-<meta name="description" content="Privacy Policy for Mugula, the iMessage photo editor." />
+<meta name="description" content="Privacy Policy for Mugula, the disappearing photo camera for your texts." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
@@ -25,34 +21,77 @@
     <div class="classbar">PRIVACY POLICY</div>
 
     <div class="titleblock">
-      <div class="re">Mugula — iMessage Photo Editor</div>
+      <div class="re">Mugula — Disappearing Photos</div>
       <h1>Privacy Policy</h1>
     </div>
 
     <div class="prose">
-      <p class="effective">Effective: 3 June 2026</p>
+      <p class="effective">Effective: 22 July 2026</p>
 
-      <p><strong>Mugula</strong> is built to be private by design. It does <strong>not collect,
-      store, or transmit any personal data</strong>, and it has no account system, servers, or
-      third-party analytics.</p>
+      <p><strong>Mugula</strong> is built to be private by design. There is no account system,
+      no ads, no analytics, and no tracking. We never see the media you send: it is encrypted on
+      your device before it leaves, and we do not hold the keys.</p>
 
       <h2>Photos &amp; Camera</h2>
-      <p>Mugula uses your camera and photo library only so you can capture or choose a photo to edit.
-      All editing — drawing, stickers, captions, and face filters — happens <strong>entirely on your
-      device</strong>. Face detection uses Apple's on-device Vision framework; no images leave your
-      device for processing.</p>
+      <p>Mugula uses your camera and photo library only so you can capture or choose a photo or
+      video to edit. All editing — drawing, stickers, captions, and filters — happens
+      <strong>entirely on your device</strong>.</p>
 
-      <h2>Sending</h2>
-      <p>An edited photo is only shared when <strong>you</strong> choose to send it in your iMessage
-      conversation. At that point it is delivered through Apple's Messages, governed by
-      <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy
-      Policy</a>. Mugula itself never uploads your photos anywhere.</p>
+      <h2>Face Data</h2>
+      <p>Some Mugula camera effects (face filters and face-warp effects) need to know where a face
+      is on screen in order to place a sticker or distortion correctly.</p>
+      <ul>
+        <li><strong>What is collected:</strong> Mugula uses Apple's on-device <strong>Vision</strong>
+        framework (<code>VNDetectFaceLandmarksRequest</code>) to compute the on-screen positions of
+        facial landmarks — the outlines of eyes, nose, and mouth — for the current camera frame or
+        the photo you are editing.</li>
+        <li><strong>How it is used:</strong> solely to draw the visual effect you selected. It is
+        used for positioning graphics only.</li>
+        <li><strong>No identification:</strong> Mugula does <strong>not</strong> perform face
+        recognition or identity matching, and does <strong>not</strong> create, derive, or store a
+        faceprint, face template, or any other biometric identifier.</li>
+        <li><strong>Where it is processed:</strong> entirely <strong>on your device</strong>. Face
+        data is never transmitted off the device, never uploaded to our servers or to iCloud, and is
+        <strong>never shared with any third party</strong>.</li>
+        <li><strong>Retention:</strong> <strong>none</strong>. Landmark positions exist only in
+        memory while the frame is being drawn and are discarded immediately afterward — typically
+        within a fraction of a second. They are never written to disk. Only the finished picture or
+        video you choose to send is saved or sent; the underlying face data is not included in it.</li>
+      </ul>
+
+      <h2>How Your Media Is Sent</h2>
+      <ul>
+        <li>When you send a photo or video, it is <strong>encrypted on your device</strong>
+        (AES-256-GCM) before it leaves. The encrypted file is delivered through
+        <strong>Apple iCloud (CloudKit)</strong>. The decryption key travels only inside the
+        end-to-end-encrypted message — not with the stored file — so only your recipient can open
+        it. We cannot read your media.</li>
+        <li>Media is <strong>temporary</strong>. It automatically deletes after the sender's chosen
+        availability window (default 48 hours), and "view once" media is removed as soon as it is
+        viewed. Deletion is client-driven: the encrypted iCloud copy is removed the next time a
+        participating device opens Mugula after the window passes.</li>
+        <li><strong>Android-friendly mode</strong> (an option you turn on per send) instead sends
+        your media as a standard message attachment so recipients on other platforms can view it. In
+        this mode the media is <strong>not encrypted by Mugula and does not auto-delete</strong> —
+        the app tells you this before you turn it on.</li>
+      </ul>
 
       <h2>Data We Collect</h2>
-      <p>None. Mugula stores no personal information and sends nothing to us or any third party.</p>
+      <p>No personal information, no contacts, no location, and no identifiers. We do not use
+      analytics or tracking SDKs, we do not sell or share data with advertisers or third parties,
+      and we do not build a profile of you. The only data that leaves your device is the encrypted
+      media you explicitly choose to send.</p>
+
+      <h2>Data Retention</h2>
+      <p>Encrypted media stored in iCloud (CloudKit) is pruned at its availability expiry (default
+      48 hours, or sooner for view-once media). Local cached copies on your device are removed on
+      the same per-send expiry; any local file without a recorded expiry is cleared after a 14-day
+      fallback limit at the latest. You can shorten this or clear the cache at any time from the
+      Mugula app's Storage settings.</p>
 
       <h2>Children</h2>
-      <p>Mugula does not collect personal information from anyone, including children under 13.</p>
+      <p>Mugula is not directed at children under 13 and does not knowingly collect personal
+      information from them.</p>
 
       <h2>Changes</h2>
       <p>If this policy changes, the updated version will appear on this page with a new effective
