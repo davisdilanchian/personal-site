@@ -158,6 +158,22 @@ const PROJECTS = [
   { name:"Pinterest Board Downloader", slug:"pinterest", icon:"assets/icons/doc/pinterest.png", status:"live", category:"Tools", codename:"DRAGNET",
     summary:"Chrome extension (MV3) that downloads an entire Pinterest board as a zip of ||original-resolution|| images using your logged-in session.",
     caps:["Chrome MV3","ZIP Export"], dispo:[{label:"GitHub", url:"https://github.com/davisdilanchian/pinterest-board-downloader"}] },
+
+  { name:"Backwords", slug:"backwords", icon:"assets/icons/doc/backwords.png", status:"beta", category:"Web", codename:"PALINDROME",
+    summary:"Learn to say a line backwards so it plays forwards when you reverse the take. It spells the reversed line for you, and a calibration round teaches it to spell things ||the way you would read them||.",
+    caps:["Web Audio","Phonetics","Browser"], dispo:[{label:"GitHub", url:"https://github.com/davisdilanchian/backwords"}] },
+
+  { name:"Risographer", slug:"risographer", icon:"assets/icons/doc/risographer.png", status:"live", category:"Web", codename:"TWO INKS",
+    summary:"Makes photos look risograph-printed. The halftone screen is fixed to the page, the way a real riso plate works, so images ||slide through the dot grid|| as you move them. One HTML file; nothing is uploaded.",
+    caps:["Canvas","Halftone","Print"], dispo:[{label:"Open it", url:"https://davisdilanchian.github.io/risographer/"},{label:"GitHub", url:"https://github.com/davisdilanchian/risographer"}] },
+
+  { name:"ShrinkRay", slug:"shrinkray", icon:"assets/icons/doc/shrinkray.png", status:"live", category:"Tools", codename:"COMPACTOR",
+    summary:"Squeezes a batch of images under a size limit (default: Discord's 8 MB) entirely in the browser. Handles camera RAW by extracting the ||embedded full-size preview||. Nothing is uploaded.",
+    caps:["Canvas","RAW","Client-side"], dispo:[{label:"Open it", url:"https://davisdilanchian.github.io/shrinkray/"},{label:"GitHub", url:"https://github.com/davisdilanchian/shrinkray"}] },
+
+  { name:"Groupier", slug:"groupier", icon:"assets/icons/doc/groupier.png", status:"live", category:"Web", codename:"HOUSE EDGE",
+    summary:"A decision matrix you bet on. Everyone gets the same chips and spends them on the squares they actually want; the top square with everyone on it wins. Saying you ||can't make it|| is always free. No accounts — just send the link.",
+    caps:["Cloudflare Workers","D1","Group Decisions"], dispo:[{label:"Play it", url:"https://groupier.ddilanchian.workers.dev"}] },
 ];
 
 /* ---------------- helpers ---------------- */
