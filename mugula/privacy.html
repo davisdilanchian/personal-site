@@ -3,8 +3,17 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Mugula: Privacy Policy</title>
-<meta name="description" content="Privacy Policy for Mugula, the disappearing photo camera for your texts." />
+<title>Mugula Privacy Policy</title>
+<meta name="description" content="How Mugula handles your photos and videos: end-to-end encrypted delivery, on-device face detection, automatic expiry, and no ad tracking." />
+<link rel="canonical" href="https://davisdilanchian.com/mugula/privacy.html" />
+<meta name="apple-itunes-app" content="app-id=6762441648" />
+<meta property="og:site_name" content="Mugula" />
+<meta property="og:title" content="Mugula Privacy Policy" />
+<meta property="og:description" content="How Mugula handles your photos and videos: end-to-end encrypted delivery, on-device face detection, automatic expiry, and no ad tracking." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://davisdilanchian.com/mugula/privacy.html" />
+<meta name="twitter:title" content="Mugula Privacy Policy" />
+<meta name="twitter:description" content="How Mugula handles your photos and videos: end-to-end encrypted delivery, on-device face detection, automatic expiry, and no ad tracking." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
@@ -26,11 +35,12 @@
     </div>
 
     <div class="prose">
-      <p class="effective">Effective: 22 July 2026</p>
+      <p class="effective">Effective: 5 October 2026</p>
 
-      <p><strong>Mugula</strong> is built to be private by design. There is no account system,
-      no ads, no analytics, and no tracking. We never see the media you send: it is encrypted on
-      your device before it leaves, and we do not hold the keys.</p>
+      <p><strong>Mugula</strong> works without creating a Mugula account. Editing happens on
+      your device. Normal Mugula delivery encrypts your media before upload. We use limited
+      referral analytics to understand how people discover Mugula through messages from friends.
+      Mugula does not show ads, sell referral data, or share it with advertisers.</p>
 
       <h2>Photos &amp; Camera</h2>
       <p>Mugula uses your camera and photo library only so you can capture or choose a photo or
@@ -70,24 +80,63 @@
         availability window (default 48 hours), and "view once" media is removed as soon as it is
         viewed. Deletion is client-driven: the encrypted iCloud copy is removed the next time a
         participating device opens Mugula after the window passes.</li>
-        <li><strong>Universal mode</strong> (an option you turn on per send) instead sends
+        <li><strong>Compatibility mode</strong> (an option you turn on per send) instead sends
         your media as a standard message attachment so any recipient can view it. In
         this mode the media is <strong>not encrypted by Mugula and does not auto-delete</strong>.
-        the app tells you this before you turn it on.</li>
+        The app tells you this before you turn it on.</li>
       </ul>
 
-      <h2>Data We Collect</h2>
-      <p>No personal information, no contacts, no location, and no identifiers. We do not use
-      analytics or tracking SDKs, we do not sell or share data with advertisers or third parties,
-      and we do not build a profile of you. The only data that leaves your device is the encrypted
-      media you explicitly choose to send.</p>
+      <h2>Referral Analytics and Identifiers</h2>
+      <p>Mugula creates a random, app-specific identifier on your device. The sending device's
+      identifier is included in each Mugula message. When a newly observed recipient successfully
+      opens a received photo or video, Mugula can send the sending and receiving devices'
+      identifiers, the first-view time, the reporting week and month, and the referral format
+      version to Apple CloudKit. We use this to measure how Mugula spreads and avoid counting
+      the same recipient repeatedly. These records measure first views, not verified downloads
+      or verified people.</p>
+      <p>These identifiers are pseudonymous, not anonymous. They contain no name, phone number,
+      email address, advertising identifier, or hardware address. Mugula does not read your
+      address book, message text, or location. A referral record links a sending and receiving
+      device. CloudKit also stores normal record timestamps and an app-scoped creator reference.
+      Referral records are separate from the encrypted media and its decryption keys.</p>
+      <p>The identifier and credited referral are stored on your device, including in Keychain
+      when available, and may survive reinstallation. Referral records are retained for historical
+      reporting until removed by the developer. They have no automatic deletion schedule and
+      are not subject to photo or video expiry timers.</p>
+      <p>We do not combine this information with data from other companies for targeted
+      advertising or advertising measurement, and do not share it with data brokers.</p>
+
+      <h2>Media Metadata and Capture Events</h2>
+      <p>CloudKit stores the encrypted file, a random media identifier, whether it is a photo or
+      video, creation time, and CloudKit's record metadata. Where screenshot or screen-recording
+      detection is available, Mugula may store the event type and time linked to the media
+      identifier so the sender can be told. This does not upload the screenshot or recording.
+      Detection cannot prevent someone from making a separate copy of your media.</p>
+      <p>CloudKit is provided by Apple. Apple processes service and account information under
+      its own privacy terms. We do not receive your Apple Account email address or password.</p>
+
+      <h2>Saved Filters, Drafts and Face Swap</h2>
+      <p>Saved filters, drafts and selected Face Swap photographs are stored locally. Camera
+      landmarks and Face Swap correspondence stay on the device. Saved sculpt filters store
+      the warp settings you create, not a biometric identity. Filter files leave your device
+      only when you choose to share them. Edited photos and videos include the visible result
+      when you choose to save or send them.</p>
 
       <h2>Data Retention</h2>
       <p>Encrypted media stored in iCloud (CloudKit) is pruned at its availability expiry (default
-      48 hours, or sooner for view-once media). Local cached copies on your device are removed on
+      48 hours, or sooner for view-once media). Cleanup runs when participating devices use Mugula;
+      deletion can be delayed while devices are offline or the app is not running. Local cached copies on your device are removed on
       the same per-send expiry; any local file without a recorded expiry is cleared after a 14-day
       fallback limit at the latest. You can shorten this or clear the cache at any time from the
       Mugula app's Storage settings.</p>
+
+      <h2>Your Choices and Requests</h2>
+      <p>You can delete local drafts and saved filters from their galleries and clear media
+      caches from Storage settings. This does not remove copies that recipients saved or
+      standard attachments sent with Compatibility mode. To request removal of referral
+      records, email <a href="mailto:ddilanchian@gmail.com">ddilanchian@gmail.com</a> with the
+      Mugula ID shown in Storage and Privacy settings. Do not send us your private media or
+      decryption keys.</p>
 
       <h2>Children</h2>
       <p>Mugula is not directed at children under 13 and does not knowingly collect personal
