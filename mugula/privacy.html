@@ -76,10 +76,12 @@
         <strong>Apple iCloud (CloudKit)</strong>. The decryption key travels only inside the
         end-to-end-encrypted message, not with the stored file, so only your recipient can open
         it. We cannot read your media.</li>
-        <li>Media is <strong>temporary</strong>. It automatically deletes after the sender's chosen
-        availability window (default 48 hours), and "view once" media is removed as soon as it is
-        viewed. Deletion is client-driven: the encrypted iCloud copy is removed the next time a
-        participating device opens Mugula after the window passes.</li>
+        <li>Media is <strong>temporary</strong>. The sender chooses an availability window
+        (default 48 hours). Timed media cannot be reopened on a device after its viewing timer
+        completes, and its local cached copies are removed. The shared encrypted CloudKit file
+        remains until availability cleanup, so other recipients in a group can still open it.
+        Cloud deletion is client-driven: the sender device removes the encrypted copy when
+        Mugula runs after the window passes. Offline devices or failed cleanup can delay removal.</li>
         <li><strong>Compatibility mode</strong> (an option you turn on per send) instead sends
         your media as a standard message attachment so any recipient can view it. In
         this mode the media is <strong>not encrypted by Mugula and does not auto-delete</strong>.
@@ -124,7 +126,8 @@
 
       <h2>Data Retention</h2>
       <p>Encrypted media stored in iCloud (CloudKit) is pruned at its availability expiry (default
-      48 hours, or sooner for view-once media). Cleanup runs when participating devices use Mugula;
+      48 hours). View timers remove the local copies; they do not immediately delete the
+      shared encrypted CloudKit file. Cleanup runs when participating devices use Mugula;
       deletion can be delayed while devices are offline or the app is not running. Local cached copies on your device are removed on
       the same per-send expiry; any local file without a recorded expiry is cleared after a 14-day
       fallback limit at the latest. You can shorten this or clear the cache at any time from the
