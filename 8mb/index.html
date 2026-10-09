@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Risographer // SUBJECT FILE / Davis Dilanchian</title>
-<meta name="description" content="A browser tool that makes photos look risograph-printed." />
-<meta property="og:title" content="Risographer / Davis Dilanchian" />
-<meta property="og:description" content="A browser tool that makes photos look risograph-printed." />
+<title>8mb // SUBJECT FILE / Davis Dilanchian</title>
+<meta name="description" content="An iPhone app that shrinks a photo or video to fit a target file size, right from the share sheet." />
+<meta property="og:title" content="8mb / Davis Dilanchian" />
+<meta property="og:description" content="An iPhone app that shrinks a photo or video to fit a target file size, right from the share sheet." />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://davisdilanchian.com/risographer/" />
+<meta property="og:url" content="https://davisdilanchian.com/8mb/" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
@@ -29,12 +29,12 @@
     <div class="control">
       <div class="col">
         CENTRAL INTELLIGENCE AGENCY<br>
-        FILE NO. <b>012</b><br>
-        CLASSIFICATION: <span class="redact" title="declassify">Web</span>
+        FILE NO. <b>015</b><br>
+        CLASSIFICATION: <span class="redact" title="declassify">iOS</span>
       </div>
       <div class="col r">
-        SUBJECT: <b>RISOGRAPHER</b><br>
-        CODENAME: <b>"TWO INKS"</b><br>
+        SUBJECT: <b>8MB</b><br>
+        CODENAME: <b>"DEAD DROP"</b><br>
         STATUS: <b>OPERATIONAL</b>
       </div>
     </div>
@@ -43,19 +43,18 @@
     <div class="detail-grid">
       <div>
         <div class="titleblock">
-          <div class="re">RE: Project Case File / Risographer</div>
-          <h1>Risographer</h1>
+          <div class="re">RE: Project Case File / 8mb</div>
+          <h1>8mb</h1>
         </div>
         <p style="margin:8px 0 0"><span class="badge b-live">OPERATIONAL</span></p>
-        <p class="abstract">A browser tool that makes photos look risograph-printed.</p>
+        <p class="abstract">An iPhone app that shrinks a photo or video to fit a target file size, right from the share sheet.</p>
         <div class="btnrow">
-          <a class="btn primary" href="https://davisdilanchian.github.io/risographer/" target="_blank" rel="noopener">▸ Open Risographer</a>
-          <a class="btn" href="https://github.com/davisdilanchian/risographer" target="_blank" rel="noopener">▸ View on GitHub</a>
+          <a class="btn primary" href="https://x.com/davisdilanchian" target="_blank" rel="noopener">▸ Follow @davisdilanchian on X</a>
         </div>
       </div>
       <div class="exhibit">
-        <img src="../assets/icons/doc/risographer.png" alt="Risographer exhibit">
-        <div class="cap">EXHIBIT: RISOGRAPHER</div>
+        <img src="../assets/icons/doc/8mb.png" alt="8mb exhibit">
+        <div class="cap">EXHIBIT: 8MB</div>
       </div>
     </div>
 
@@ -68,25 +67,28 @@
          ============================================================ -->
     <div class="sec"><span>▌ Overview</span><span class="ln"></span></div>
     <div class="prose">
-      <p>Drop images into one of two ink folders (blue and pink by default), then move and rotate them around a Letter, A3 or custom sheet.</p>
-      <p>The halftone screen is anchored to the page, not to each image. That is how real riso works: the screen belongs to the plate, not the artwork. Images slide through a fixed dot grid, two images on the same ink share one continuous screen, and the two inks multiply where they cross. Dot pitch is set in lines per inch so the print looks the same at any export resolution.</p>
-      <p>It is one HTML file. No install, no account, nothing uploaded.</p>
+      <p>When a file is too big for Discord, email or an upload form, hit <b>Share &rarr; 8mb</b>, pick a target size (default 7.99 MB), and 8mb saves a resized copy to your Photos library. The size picker opens right over the share sheet, so there is no app switch. You can also open the app and pick from your library.</p>
+      <h3>How it compresses</h3>
+      <ul>
+        <li><b>Photos:</b> JPEG quality is binary-searched to the largest size that fits; if the lowest quality still overflows, the image is downscaled step by step.</li>
+        <li><b>Videos:</b> the target bitrate is worked out from the size budget and the clip length, then the video is re-encoded (H.264 + AAC), dropping resolution when the bitrate is too low to hold the full frame. A second pass runs if the first overshoots.</li>
+      </ul>
+      <p>Everything happens on the device. Your original is never modified and nothing is uploaded. Prefer the browser? <a href="../shrinkray/">ShrinkRay</a> does the same for images on any computer.</p>
     </div>
 
     <div class="sec"><span>▌ Known Capabilities</span><span class="ln"></span></div>
     <div class="prose">
       <ul>
-        <li>Canvas rendering</li>
-        <li>Page-anchored halftone</li>
-        <li>Two-ink overprint</li>
-        <li>Client-side only</li>
+        <li>SwiftUI</li>
+        <li>Share extension</li>
+        <li>AVFoundation</li>
+        <li>On-device only</li>
       </ul>
     </div>
 
     <div class="sec"><span>▌ Filed Documents</span><span class="ln"></span></div>
     <ul class="doclist">
-          <li><a href="https://davisdilanchian.github.io/risographer/" target="_blank" rel="noopener">Open Risographer</a><span class="tag">external</span></li>
-          <li><a href="https://github.com/davisdilanchian/risographer" target="_blank" rel="noopener">View on GitHub</a><span class="tag">external</span></li>
+          <li><a href="privacy.html">Privacy Policy</a><span class="tag">legal</span></li>
           <li><a href="https://x.com/davisdilanchian" target="_blank" rel="noopener">Follow @davisdilanchian on X</a><span class="tag">external</span></li>
         </ul>
 
