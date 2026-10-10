@@ -143,40 +143,18 @@ const PROJECTS = [
     summary:"iOS alarm app built for ||sleep disorders|| (narcolepsy, IH, DSPD) — wake-up challenge modules, post-dismissal monitoring, medication timing, nap management, and circadian-shift tools.",
     caps:["iOS","Sleep","Health"], dispo:[] },
 
-  { name:"Dannify", slug:"dannify", icon:"assets/icons/doc/dannify.png", status:"wip", category:"Web", codename:"EARWORM",
-    summary:"Client-side Spotify playlist builder — search tracks, create and manage playlists via ||PKCE OAuth||, with LLM-powered curation (Claude / GPT / Gemini).",
-    caps:["Spotify","LLM","OAuth"], dispo:[] },
-
-  { name:"CardSnap", slug:"cardsnap", icon:"assets/icons/doc/cardsnap.png", status:"wip", category:"iOS", codename:"ROLODEX",
-    summary:"iOS business-card scanner — auto-captures when the card is in focus, extracts every contact field plus ||handwritten notes|| with Gemini AI, and exports to JSON/CSV.",
-    caps:["SwiftUI","Gemini AI","OCR"], dispo:[] },
-
-  { name:"WinWhisper", slug:"winwhisper", icon:"assets/icons/doc/winwhisper.png", status:"live", category:"Tools", codename:"GHOSTKEY",
-    summary:"Local Whisper-based dictation for Windows — a faster, fully ||on-device|| replacement for Win+H voice typing.",
-    caps:["Whisper","Windows","Open Source"], dispo:[{label:"GitHub", url:"https://github.com/davisdilanchian/WinWhisper"}] },
-
-  { name:"Pinterest Board Downloader", slug:"pinterest", icon:"assets/icons/doc/pinterest.png", status:"live", category:"Tools", codename:"DRAGNET",
-    summary:"Chrome extension (MV3) that downloads an entire Pinterest board as a zip of ||original-resolution|| images using your logged-in session.",
-    caps:["Chrome MV3","ZIP Export"], dispo:[{label:"GitHub", url:"https://github.com/davisdilanchian/pinterest-board-downloader"}] },
-
-  { name:"Backwords", slug:"backwords", icon:"assets/icons/doc/backwords.png", status:"beta", category:"Web", codename:"PALINDROME",
-    summary:"Learn to say a line backwards so it plays forwards when you reverse the take. It spells the reversed line for you, and a calibration round teaches it to spell things ||the way you would read them||.",
-    caps:["Web Audio","Phonetics","Browser"], dispo:[{label:"GitHub", url:"https://github.com/davisdilanchian/backwords"}] },
-
   { name:"Risographer", slug:"risographer", icon:"assets/icons/doc/risographer.png", status:"live", category:"Web", codename:"TWO INKS",
-    summary:"Makes photos look risograph-printed. The halftone screen is fixed to the page, the way a real riso plate works, so images ||slide through the dot grid|| as you move them. One HTML file; nothing is uploaded.",
-    caps:["Canvas","Halftone","Print"], dispo:[{label:"Open it", url:"https://davisdilanchian.github.io/risographer/"},{label:"GitHub", url:"https://github.com/davisdilanchian/risographer"}] },
-
-  { name:"ShrinkRay", slug:"shrinkray", icon:"assets/icons/doc/shrinkray.png", status:"live", category:"Tools", codename:"COMPACTOR",
-    summary:"Squeezes a batch of images under a size limit (default: Discord's 8 MB) entirely in the browser. Handles camera RAW by extracting the ||embedded full-size preview||. Nothing is uploaded.",
-    caps:["Canvas","RAW","Client-side"], dispo:[{label:"Open it", url:"https://davisdilanchian.github.io/shrinkray/"},{label:"GitHub", url:"https://github.com/davisdilanchian/shrinkray"}] },
+    summary:"A risograph visualization and layout tool. Lay out photos on a Letter, A3 or custom sheet across two ink layers and see how the print will come out: the halftone screen is fixed to the page like a real riso plate, so images ||slide through the dot grid|| as you arrange them. One HTML file; nothing is uploaded.",
+    caps:["Layout","Halftone Preview","Print Prep"], dispo:[{label:"Open it", url:"https://davisdilanchian.github.io/risographer/"},{label:"GitHub", url:"https://github.com/davisdilanchian/risographer"}] },
 
   { name:"Groupier", slug:"groupier", icon:"assets/icons/doc/groupier.png", status:"live", category:"Web", codename:"HOUSE EDGE",
     summary:"A decision matrix you bet on. Everyone gets the same chips and spends them on the squares they actually want; the top square with everyone on it wins. Saying you ||can't make it|| is always free. No accounts; just send the link.",
     caps:["Cloudflare Workers","D1","Group Decisions"], dispo:[{label:"Play it", url:"https://groupier.ddilanchian.workers.dev"}] },
+
   { name:"8mb", slug:"8mb", icon:"assets/icons/doc/8mb.png", status:"live", category:"iOS", codename:"DEAD DROP",
     summary:"iPhone app that shrinks a photo or video to fit a target size (default: Discord's 8 MB) straight from the share sheet. Compression happens ||entirely on the device||; nothing is uploaded.",
     caps:["SwiftUI","Share Extension","AVFoundation"], dispo:[{label:"Privacy Policy", url:"8mb/privacy.html"}] },
+
   { name:"Splat Studio", slug:"splatstudio", icon:"assets/icons/doc/splatstudio.png", status:"live", category:"Tools", codename:"POINT CLOUD",
     summary:"Turns iPhone, Meta glasses or any other video into a 3D Gaussian splat with one command: frames, camera poses, ||splat training||, then export for Blender or the web.",
     caps:["Python","COLMAP","Gaussian Splatting"], dispo:[{label:"GitHub", url:"https://github.com/davisdilanchian/gaussian-maker"}] },
@@ -184,6 +162,18 @@ const PROJECTS = [
   { name:"Staffwise", slug:"staffwise", icon:"assets/icons/doc/staffwise.png", status:"beta", category:"iOS", codename:"PERFECT PITCH",
     summary:"iPhone piano trainer for sight-reading and playing by ear. Answer on the on-screen keys or ||your real piano through the mic||, and the drills keep coming back to the notes you are slowest on.",
     caps:["iOS","Pitch Detection","Ear Training"], dispo:[{label:"Support", url:"staffwise/support.html"},{label:"Privacy Policy", url:"staffwise/privacy.html"}] },
+
+  { name:"CardSnap", slug:"cardsnap", icon:"assets/icons/doc/cardsnap.png", status:"wip", category:"iOS", codename:"ROLODEX",
+    summary:"iOS business-card scanner — auto-captures when the card is in focus, extracts every contact field plus ||handwritten notes|| with Gemini AI, and exports to JSON/CSV.",
+    caps:["SwiftUI","Gemini AI","OCR"], dispo:[] },
+
+  { name:"Backwords", slug:"backwords", icon:"assets/icons/doc/backwords.png", status:"beta", category:"Web", codename:"PALINDROME",
+    summary:"Learn to say a line backwards so it plays forwards when you reverse the take. It spells the reversed line for you, and a calibration round teaches it to spell things ||the way you would read them||.",
+    caps:["Web Audio","Phonetics","Browser"], dispo:[{label:"GitHub", url:"https://github.com/davisdilanchian/backwords"}] },
+
+  { name:"ShrinkRay", slug:"shrinkray", icon:"assets/icons/doc/shrinkray.png", status:"live", category:"Tools", codename:"COMPACTOR",
+    summary:"Squeezes a batch of images under a size limit (default: Discord's 8 MB) entirely in the browser. Handles camera RAW by extracting the ||embedded full-size preview||. Nothing is uploaded.",
+    caps:["Canvas","RAW","Client-side"], dispo:[{label:"Open it", url:"https://davisdilanchian.github.io/shrinkray/"},{label:"GitHub", url:"https://github.com/davisdilanchian/shrinkray"}] },
 ];
 
 /* ---------------- helpers ---------------- */
