@@ -30,7 +30,7 @@
     </div>
 
     <div class="prose">
-      <p class="effective">Effective: 3 October 2026</p>
+      <p class="effective">Effective: 14 November 2026</p>
 
       <p><strong>8mb</strong> compresses your photos and videos entirely on your device. Your
       photos and videos are <strong>never uploaded</strong> to us or anyone else. The free
@@ -41,6 +41,15 @@
       (2) save the compressed copy back. All compression happens <strong>entirely on your
       device</strong>. Your original file is never modified. Ad providers never receive your
       photos or videos.</p>
+
+      <h2>Making GIFs from X posts</h2>
+      <p>When you share a link to a post on X with 8mb, 8mb sends that post's ID to X
+      (<code>cdn.syndication.twimg.com</code>) to find the post's GIF or video, then downloads it
+      from X's servers and converts it on your device. If X doesn't answer, 8mb asks
+      <a href="https://github.com/FixTweet/FxTwitter" target="_blank" rel="noopener">FxTwitter</a>
+      (<code>api.fxtwitter.com</code>), a public service, for the same information. Like any web
+      request, these services see your IP address. 8mb sends them nothing else, and only when you
+      share a post link.</p>
 
       <h2>Advertising</h2>
       <p>The free version of 8mb shows ads from Google AdMob in the main app. (The Share
@@ -67,7 +76,8 @@
       <h2>Data We Collect</h2>
       <p>We (the developer) collect nothing. 8mb has no account system and no servers of its
       own. The only data collection is by Google AdMob, as described above, in the free
-      version.</p>
+      version. Fetching a shared X post, described above, isn't stored or used for anything
+      else.</p>
 
       <h2>Children</h2>
       <p>8mb is not directed at children under 13 and does not knowingly collect their personal
