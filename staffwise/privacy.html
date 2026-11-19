@@ -1,6 +1,3 @@
-<!-- ============================================================
-     Privacy policy for Staffwise, the piano sight-reading and ear-training app.
-     ============================================================ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,24 +7,20 @@
 <meta name="description" content="Privacy Policy for Staffwise, the piano sight-reading and ear-training app." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="../assets/dossier.css" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/site.css" />
 </head>
 <body>
-  <div class="sheet">
+  <header class="wrap narrow topbar">
+    <a href="./">&larr; Staffwise</a>
+    <a class="home" href="../">Davis Dilanchian</a>
+  </header>
 
-    <div class="topnav">
-      <a href="../">◀ Master file</a>
-      <span>DAVISDILANCHIAN.COM</span>
-    </div>
-
-    <div class="classbar">PRIVACY POLICY</div>
-
-    <div class="titleblock">
-      <div class="re">Staffwise: Sight Reading</div>
+  <main class="wrap narrow">
+    <div class="doc-head">
+      <p class="app">Staffwise: Sight Reading</p>
       <h1>Privacy Policy</h1>
     </div>
-
     <div class="prose">
       <p class="effective">Effective: 9 October 2026</p>
 
@@ -89,14 +82,12 @@
       <h2>Contact</h2>
       <p>Questions? Email <a href="mailto:ddilanchian@gmail.com">ddilanchian@gmail.com</a>.</p>
     </div>
+  </main>
 
-    <hr class="hr dbl">
-    <div class="footmeta">
-      <span>FILED BY: @davisdilanchian · ddilanchian@gmail.com</span>
-      <span><a href="../">◀ Master file</a></span>
-    </div>
-    <div class="pagefoot">— END OF FILE —</div>
-
-  </div>
+  <footer class="wrap narrow foot">
+    <span>&copy; <span id="y">2026</span> Davis Dilanchian</span>
+    <span><a href="https://x.com/davisdilanchian" target="_blank" rel="noopener">X</a> &middot; <a href="https://github.com/davisdilanchian" target="_blank" rel="noopener">GitHub</a> &middot; <a href="mailto:ddilanchian@gmail.com">Email</a></span>
+  </footer>
+<script>document.getElementById("y").textContent=new Date().getFullYear();</script>
 </body>
 </html>

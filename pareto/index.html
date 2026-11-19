@@ -3,110 +3,64 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Pareto // SUBJECT FILE — Davis Dilanchian</title>
-<meta name="description" content="iOS bill-splitting app — scan a receipt with AI, assign items to each person, auto-split tax &amp; tip, and request payment via Venmo." />
-<meta property="og:title" content="Pareto — Davis Dilanchian" />
-<meta property="og:description" content="iOS bill-splitting app — scan a receipt with AI, assign items to each person, auto-split tax &amp; tip, and request payment via Venmo." />
+<title>Pareto: Split a bill from a photo of the receipt</title>
+<meta name="description" content="Scan a receipt, assign items to each person, split tax and tip automatically, and request payment through Venmo." />
+<meta property="og:title" content="Pareto: Split a bill from a photo of the receipt" />
+<meta property="og:description" content="Scan a receipt, assign items to each person, split tax and tip automatically, and request payment through Venmo." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://davisdilanchian.com/pareto/" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="../assets/dossier.css" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/site.css" />
 </head>
 <body>
-  <div class="sheet">
+  <header class="wrap narrow topbar">
+    <a href="../">&larr; All projects</a>
+    <a class="home" href="../">Davis Dilanchian</a>
+  </header>
 
-    <div class="stamp declassified">Declassified</div>
-
-    <div class="topnav">
-      <a href="../">◀ Return to master file</a>
-      <span>DAVISDILANCHIAN.COM</span>
-    </div>
-
-    <div class="classbar">TOP SECRET<span class="small"> // NOFORN // ORCON</span></div>
-
-    <div class="control">
-      <div class="col">
-        CENTRAL INTELLIGENCE AGENCY<br>
-        FILE NO. <b>002</b><br>
-        CLASSIFICATION: <span class="redact" title="declassify">iOS</span>
-      </div>
-      <div class="col r">
-        SUBJECT: <b>PARETO</b><br>
-        CODENAME: <b>"SPLIT CHECK"</b><br>
-        STATUS: <b>OPERATIONAL</b>
-      </div>
-    </div>
-    <hr class="hr">
-
-    <div class="detail-grid">
+  <main class="wrap narrow">
+    <section class="hero">
+      <div class="icon"><img src="../assets/thumbs/pareto.webp" alt="Pareto icon" width="256" height="256" loading="lazy"></div>
       <div>
-        <div class="titleblock">
-          <div class="re">RE: Project Case File — Pareto</div>
-          <h1>Pareto</h1>
-        </div>
-        <p style="margin:8px 0 0"><span class="badge b-live">OPERATIONAL</span></p>
-        <p class="abstract">iOS bill-splitting app — scan a receipt with AI, assign items to each person, auto-split tax &amp; tip, and request payment via Venmo.</p>
-        <div class="btnrow">
-          <a class="btn primary" href="https://apps.apple.com/us/app/pareto-bill-splitter-scan/id6738635819" target="_blank" rel="noopener">▸ Download on the App Store</a>
-        </div>
+        <div class="meta"><span class="pill live">Live</span><span>iPhone</span></div>
+        <h1>Pareto</h1>
+        <p class="tagline">Split a bill from a photo of the receipt.</p>
       </div>
-      <div class="exhibit">
-        <img src="../assets/icons/doc/pareto.png" alt="Pareto exhibit">
-        <div class="cap">EXHIBIT — PARETO</div>
-      </div>
+    </section>
+    <div class="actions">
+        <a class="btn primary" href="https://apps.apple.com/us/app/pareto-bill-splitter-scan/id6738635819" target="_blank" rel="noopener">App Store</a>
+        <a class="btn" href="privacy.html">Privacy Policy</a>
+        <a class="btn" href="support.html">Support</a>
     </div>
 
-    <hr class="hr dbl">
-
-    <!-- ============================================================
-         OVERVIEW — EDIT THIS SECTION to describe the project.
-         Plain HTML: use <p>…</p> for paragraphs, <h3>…</h3> for
-         sub-headings, <ul><li>…</li></ul> for lists.
-         ============================================================ -->
-    <div class="sec"><span>▌ Overview</span><span class="ln"></span></div>
-    <div class="prose">
-      <p><b>Split the bill effortlessly.</b> Pareto turns the awkward post-dinner math into a few taps: snap a photo of the receipt, let AI read the line items, assign each dish to whoever ordered it, and Pareto works out exactly what everyone owes — tax and tip included — then fires off payment requests over Venmo.</p>
+    <section class="block">
+      <h2>About</h2>
+      <div class="prose">
+<p><b>Split the bill effortlessly.</b> Pareto turns the awkward post-dinner math into a few taps: snap a photo of the receipt, let AI read the line items, assign each dish to whoever ordered it, and Pareto works out exactly what everyone owes (tax and tip included), then fires off payment requests over Venmo.</p>
       <p>No more "just split it evenly" when three people only had water. Add your guests, drag items onto their cards, and watch each person's total and share-of-the-bill update live. When the numbers are settled, collect with a single tap.</p>
-    </div>
+      </div>
+    </section>
 
-    <div class="sec"><span>▌ Field Capabilities</span><span class="ln"></span></div>
-    <div class="prose">
-      <ul>
-        <li><b>Tap-to-assign.</b> Assign menu items to each guest with a single tap — no manual math, no spreadsheets.</li>
-        <li><b>Live per-person totals.</b> Automatic per-person totals and share percentages recalculate the instant anything changes.</li>
-        <li><b>Scan &amp; split.</b> Add your guests, snap the receipt, and split the whole thing instantly with AI line-item detection.</li>
-      </ul>
-    </div>
+    <section class="block">
+      <h2>Built with</h2>
+      <ul class="tags"><li>SwiftUI</li><li>Gemini AI (receipt OCR)</li><li>Venmo deep links</li><li>StoreKit (Pro)</li><li>iMessage extension</li></ul>
+    </section>
 
-    <div class="sec"><span>▌ Known Capabilities</span><span class="ln"></span></div>
-    <div class="prose">
-      <ul>
-        <li>SwiftUI</li>
-        <li>Gemini AI (receipt OCR)</li>
-        <li>Venmo deep links</li>
-        <li>StoreKit (Pro)</li>
-        <li>iMessage extension</li>
-      </ul>
-    </div>
 
-    <div class="sec"><span>▌ Filed Documents</span><span class="ln"></span></div>
-    <ul class="doclist">
-          <li><a href="https://apps.apple.com/us/app/pareto-bill-splitter-scan/id6738635819" target="_blank" rel="noopener">Download on the App Store</a><span class="tag">external</span></li>
-          <li><a href="privacy.html">Privacy Policy</a><span class="tag">legal</span></li>
-          <li><a href="support.html">Support</a><span class="tag">support</span></li>
-        </ul>
+    <section class="block">
+      <div class="follow">
+        <p>Follow me on X for updates!<span>New builds, releases and works in progress get posted there first.</span></p>
+        <a class="btn primary" href="https://x.com/davisdilanchian" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18.9 1.5h3.68l-8.04 9.19L24 22.5h-7.4l-5.8-7.58-6.63 7.58H.49l8.6-9.83L0 1.5h7.59l5.24 6.93zm-1.29 18.8h2.04L6.49 3.6H4.3z"/></svg> @davisdilanchian</a>
+      </div>
+    </section>
+  </main>
 
-    <hr class="hr dbl">
-    <div class="footmeta">
-      <span>FILED BY: @davisdilanchian · ddilanchian@gmail.com</span>
-      <span><a href="../">◀ Return to master file</a></span>
-    </div>
-    <hr class="hr">
-    <div class="classbar redacted-bar">TOP SECRET<span class="small"> // ████ // ████</span></div>
-    <div class="pagefoot">— END OF FILE —</div>
-
-  </div>
+  <footer class="wrap narrow foot">
+    <span>&copy; <span id="y">2026</span> Davis Dilanchian</span>
+    <span><a href="https://x.com/davisdilanchian" target="_blank" rel="noopener">X</a> &middot; <a href="https://github.com/davisdilanchian" target="_blank" rel="noopener">GitHub</a> &middot; <a href="mailto:ddilanchian@gmail.com">Email</a></span>
+  </footer>
+<script>document.getElementById("y").textContent=new Date().getFullYear();</script>
 </body>
 </html>

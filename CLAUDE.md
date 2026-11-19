@@ -8,8 +8,9 @@ Maintaining Davis Dilanchian's personal projects landing page — a static showc
 
 ## Architecture
 
-- Single static `index.html` — no build step, no framework. Plain HTML/CSS/JS.
-- All project data is in the `PROJECTS` array near the bottom of `index.html`. To add/edit a project, edit that array (see `README.md` for the schema).
+- Static HTML/CSS, no build step, no framework. One stylesheet: `assets/site.css`.
+- `index.html` has one `<article class="card">` per project; each project also has `<slug>/index.html`. See `README.md` for how to add or edit one.
+- House style: no em dashes in page copy.
 - `CNAME` → `davisdilanchian.com` (apex domain). `.nojekyll` disables Jekyll.
 
 ## Hosting
@@ -27,7 +28,7 @@ Apex domain points at GitHub Pages via these records:
 
 ## Workflow
 
-- Edit `index.html`, commit, push to `master`. GitHub Pages redeploys automatically (~1 min).
+- Edit the pages, commit, push to `master`. GitHub Pages redeploys automatically (~1 min).
 - Keep the project list curated to **public / shippable** work. Personal/internal projects stay off the public page.
 
 ## Completed

@@ -3,43 +3,39 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Pareto — Support</title>
+<title>Pareto: Support</title>
 <meta name="description" content="Support for Pareto, the iOS bill-splitting app." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="../assets/dossier.css" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/site.css" />
 </head>
 <body>
-  <div class="sheet">
+  <header class="wrap narrow topbar">
+    <a href="./">&larr; Pareto</a>
+    <a class="home" href="../">Davis Dilanchian</a>
+  </header>
 
-    <div class="topnav">
-      <a href="./">◀ Pareto file</a>
-      <span>DAVISDILANCHIAN.COM</span>
-    </div>
-
-    <div class="classbar">SUPPORT</div>
-
-    <div class="titleblock">
-      <div class="re">Pareto — Bill Splitter &amp; Scan</div>
+  <main class="wrap narrow">
+    <div class="doc-head">
+      <p class="app">Pareto: Bill Splitter &amp; Scan</p>
       <h1>Support</h1>
     </div>
-
     <div class="prose">
       <p>Need help with <strong>Pareto</strong>? You're in the right place. The fastest way to reach
-      me is email — I read every message.</p>
+      me is email. I read every message.</p>
 
       <div class="btnrow">
-        <a class="btn primary" href="mailto:ddilanchian@gmail.com?subject=Pareto%20Support">▸ Email support</a>
-        <a class="btn" href="https://apps.apple.com/us/app/pareto-bill-splitter-scan/id6738635819" target="_blank" rel="noopener">▸ App Store</a>
+        <a class="btn primary" href="mailto:ddilanchian@gmail.com?subject=Pareto%20Support">Email support</a>
+        <a class="btn" href="https://apps.apple.com/us/app/pareto-bill-splitter-scan/id6738635819" target="_blank" rel="noopener">App Store</a>
       </div>
 
       <h2>How Pareto works</h2>
       <ul>
-        <li><strong>Scan a receipt</strong> — point your camera at the receipt and Pareto reads the line items automatically.</li>
-        <li><strong>Assign items</strong> — tap to assign each item to the people in your group.</li>
-        <li><strong>Split tax &amp; tip</strong> — Pareto divides tax and tip proportionally.</li>
-        <li><strong>Request payment</strong> — send each person a Venmo request for their share.</li>
+        <li><strong>Scan a receipt</strong>: point your camera at the receipt and Pareto reads the line items automatically.</li>
+        <li><strong>Assign items</strong>: tap to assign each item to the people in your group.</li>
+        <li><strong>Split tax &amp; tip</strong>: Pareto divides tax and tip proportionally.</li>
+        <li><strong>Request payment</strong>: send each person a Venmo request for their share.</li>
       </ul>
 
       <h2>FAQ</h2>
@@ -63,14 +59,12 @@
       <p>Email <a href="mailto:ddilanchian@gmail.com?subject=Pareto%20Support">ddilanchian@gmail.com</a>
       with your device model and iOS version and I'll help you out.</p>
     </div>
+  </main>
 
-    <hr class="hr dbl">
-    <div class="footmeta">
-      <span>FILED BY: @davisdilanchian · ddilanchian@gmail.com</span>
-      <span><a href="../">◀ Master file</a></span>
-    </div>
-    <div class="pagefoot">— END OF FILE —</div>
-
-  </div>
+  <footer class="wrap narrow foot">
+    <span>&copy; <span id="y">2026</span> Davis Dilanchian</span>
+    <span><a href="https://x.com/davisdilanchian" target="_blank" rel="noopener">X</a> &middot; <a href="https://github.com/davisdilanchian" target="_blank" rel="noopener">GitHub</a> &middot; <a href="mailto:ddilanchian@gmail.com">Email</a></span>
+  </footer>
+<script>document.getElementById("y").textContent=new Date().getFullYear();</script>
 </body>
 </html>

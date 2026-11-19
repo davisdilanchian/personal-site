@@ -3,98 +3,65 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Dandle // SUBJECT FILE — Davis Dilanchian</title>
-<meta name="description" content="A 3D word-building physics game — build crossword-like structures from letter cubes on a checkerboard, then drop verb cubes that apply directional force to shove your structure into the end zone." />
-<meta property="og:title" content="Dandle — Davis Dilanchian" />
-<meta property="og:description" content="A 3D word-building physics game — build crossword-like structures from letter cubes on a checkerboard, then drop verb cubes that apply directional force to shove your structure into the end zone." />
+<title>Dandle: A 3D word-building physics game</title>
+<meta name="description" content="A 3D word-building physics game. Branch words off letter cubes, and use verbs to shove your structure into the end zone." />
+<meta property="og:title" content="Dandle: A 3D word-building physics game" />
+<meta property="og:description" content="A 3D word-building physics game. Branch words off letter cubes, and use verbs to shove your structure into the end zone." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://davisdilanchian.com/dandle/" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="../assets/dossier.css" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/site.css" />
 </head>
 <body>
-  <div class="sheet">
+  <header class="wrap narrow topbar">
+    <a href="../">&larr; All projects</a>
+    <a class="home" href="../">Davis Dilanchian</a>
+  </header>
 
-    <div class="stamp declassified">Declassified</div>
-
-    <div class="topnav">
-      <a href="../">◀ Return to master file</a>
-      <span>DAVISDILANCHIAN.COM</span>
-    </div>
-
-    <div class="classbar">TOP SECRET<span class="small"> // NOFORN // ORCON</span></div>
-
-    <div class="control">
-      <div class="col">
-        CENTRAL INTELLIGENCE AGENCY<br>
-        FILE NO. <b>004</b><br>
-        CLASSIFICATION: <span class="redact" title="declassify">Web</span>
-      </div>
-      <div class="col r">
-        SUBJECT: <b>DANDLE</b><br>
-        CODENAME: <b>"TOPPLE"</b><br>
-        STATUS: <b>OPERATIONAL</b>
-      </div>
-    </div>
-    <hr class="hr">
-
-    <div class="detail-grid">
+  <main class="wrap narrow">
+    <section class="hero">
+      <div class="icon"><img src="../assets/thumbs/dandle.webp" alt="Dandle icon" width="256" height="256" loading="lazy"></div>
       <div>
-        <div class="titleblock">
-          <div class="re">RE: Project Case File — Dandle</div>
-          <h1>Dandle</h1>
-        </div>
-        <p style="margin:8px 0 0"><span class="badge b-live">OPERATIONAL</span></p>
-        <p class="abstract">A 3D word-building physics game — build crossword-like structures from letter cubes on a checkerboard, then drop verb cubes that apply directional force to shove your structure into the end zone.</p>
-        <div class="btnrow">
-          <a class="btn primary" href="https://dandle.online" target="_blank" rel="noopener">▸ Play at dandle.online</a>
-        </div>
+        <div class="meta"><span class="pill live">Live</span><span>Web game</span></div>
+        <h1>Dandle</h1>
+        <p class="tagline">A 3D word-building physics game.</p>
       </div>
-      <div class="exhibit">
-        <img src="../assets/icons/doc/dandle.png" alt="Dandle exhibit">
-        <div class="cap">EXHIBIT — DANDLE</div>
+    </section>
+    <div class="actions">
+        <a class="btn primary" href="https://dandle.online" target="_blank" rel="noopener">Play at dandle.online</a>
+    </div>
+
+    <section class="block">
+      <h2>About</h2>
+      <div class="prose">
+<p>Dandle is a word game with physics. Each level starts with a random word laid out as 3D letter cubes on a checkerboard floor. Click a cube, type a word that contains that letter, and the new word branches off at a right angle, building a crossword-like structure.</p>
+<p>Verbs are different: they apply force in the direction they are placed, shown by red arrows. Use them to push the whole structure into the red end zone to finish the level.</p>
+<h3>Controls</h3>
+<ul><li>Drag to orbit the camera, scroll to zoom, right-drag to pan.</li><li>Click a letter cube to select it, then type a word and press Enter.</li></ul>
+<p>It runs in the browser with Three.js for the 3D and procedural sound from the Web Audio API.</p>
       </div>
-    </div>
+    </section>
 
-    <hr class="hr dbl">
+    <section class="block">
+      <h2>Built with</h2>
+      <ul class="tags"><li>Three.js</li><li>Real-time physics</li><li>Level editor</li><li>WebGL</li></ul>
+    </section>
 
-    <!-- ============================================================
-         OVERVIEW — EDIT THIS SECTION to describe the project.
-         Plain HTML: use <p>…</p> for paragraphs, <h3>…</h3> for
-         sub-headings, <ul><li>…</li></ul> for lists.
-         ============================================================ -->
-    <div class="sec"><span>▌ Overview</span><span class="ln"></span></div>
-    <div class="prose">
-      <p>A 3D word-building physics game — build crossword-like structures from letter cubes on a checkerboard, then drop verb cubes that apply directional force to shove your structure into the end zone.</p>
-      <p class="placeholder">[ Expand this brief — add the story behind Dandle: what it does, why you built it, key features, and where it's headed. Edit <code>dandle/index.html</code>. ]</p>
-    </div>
 
-    <div class="sec"><span>▌ Known Capabilities</span><span class="ln"></span></div>
-    <div class="prose">
-      <ul>
-        <li>Three.js</li>
-        <li>Real-time physics</li>
-        <li>Level editor</li>
-        <li>WebGL</li>
-      </ul>
-    </div>
+    <section class="block">
+      <div class="follow">
+        <p>Follow me on X for updates!<span>New builds, releases and works in progress get posted there first.</span></p>
+        <a class="btn primary" href="https://x.com/davisdilanchian" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18.9 1.5h3.68l-8.04 9.19L24 22.5h-7.4l-5.8-7.58-6.63 7.58H.49l8.6-9.83L0 1.5h7.59l5.24 6.93zm-1.29 18.8h2.04L6.49 3.6H4.3z"/></svg> @davisdilanchian</a>
+      </div>
+    </section>
+  </main>
 
-    <div class="sec"><span>▌ Filed Documents</span><span class="ln"></span></div>
-    <ul class="doclist">
-          <li><a href="https://dandle.online" target="_blank" rel="noopener">Play at dandle.online</a><span class="tag">external</span></li>
-        </ul>
-
-    <hr class="hr dbl">
-    <div class="footmeta">
-      <span>FILED BY: @davisdilanchian · ddilanchian@gmail.com</span>
-      <span><a href="../">◀ Return to master file</a></span>
-    </div>
-    <hr class="hr">
-    <div class="classbar redacted-bar">TOP SECRET<span class="small"> // ████ // ████</span></div>
-    <div class="pagefoot">— END OF FILE —</div>
-
-  </div>
+  <footer class="wrap narrow foot">
+    <span>&copy; <span id="y">2026</span> Davis Dilanchian</span>
+    <span><a href="https://x.com/davisdilanchian" target="_blank" rel="noopener">X</a> &middot; <a href="https://github.com/davisdilanchian" target="_blank" rel="noopener">GitHub</a> &middot; <a href="mailto:ddilanchian@gmail.com">Email</a></span>
+  </footer>
+<script>document.getElementById("y").textContent=new Date().getFullYear();</script>
 </body>
 </html>
