@@ -8,8 +8,9 @@ Maintaining Davis Dilanchian's personal projects landing page — a static showc
 
 ## Architecture
 
-- Static HTML/CSS, no build step, no framework. One stylesheet: `assets/site.css`.
-- `index.html` has one `<article class="card">` per project; each project also has `<slug>/index.html`. See `README.md` for how to add or edit one.
+- Static HTML/CSS/JS, no build step, no framework. One stylesheet: `assets/dossier.css`.
+- The design is a **declassified CIA dossier** (stamps, redaction bars, codenames, halftone exhibit photos). This is the site's charm: keep it. Do not replace it with a plain or "modern" layout.
+- All home-page project data is in the `PROJECTS` array near the bottom of `index.html`; each project also has a case file at `<slug>/index.html`. See `README.md` for the schema.
 - House style: no em dashes in page copy.
 - `CNAME` → `davisdilanchian.com` (apex domain). `.nojekyll` disables Jekyll.
 
