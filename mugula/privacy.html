@@ -105,23 +105,18 @@
       when available, and may survive reinstallation. Referral records are retained for historical
       reporting until removed by the developer. They have no automatic deletion schedule and
       are not subject to photo or video expiry timers.</p>
-      <p>So that the sender's app can count the new people who opened their Mugulas and unlock
-      features for them, Mugula also stores a second record when a referral is recorded. It holds
-      only the sending device's identifier and the time. Its name is a one-way hash of the
-      receiving device's identifier, so it does not reveal who the recipient is. Unlike the
-      referral record, this record is readable by any copy of the Mugula app, and it has no
-      automatic deletion schedule.</p>
       <p>If you take part in a referral or ambassador programme and choose to give us your
       identifier, we use the referral counts for that identifier to work out your reward.</p>
       <p>We do not combine this information with data from other companies for targeted
       advertising or advertising measurement, and do not share it with data brokers.</p>
 
-      <h2>Media Metadata and Capture Events</h2>
+      <h2>Media Metadata and Capture Protection</h2>
       <p>CloudKit stores the encrypted file, a random media identifier, whether it is a photo or
-      video, creation time, and CloudKit's record metadata. Where screenshot or screen-recording
-      detection is available, Mugula may store the event type and time linked to the media
-      identifier so the sender can be told. This does not upload the screenshot or recording.
-      Detection cannot prevent someone from making a separate copy of your media.</p>
+      video, creation time, and CloudKit's record metadata. Photos and videos sent with a view
+      timer are hidden from screenshots and screen recordings on the viewing device, which show
+      a black image instead. Mugula does not record or report that a screenshot or recording
+      was attempted, and it does not tell the sender. This protection cannot stop someone from
+      copying your media another way, such as photographing the screen with a second device.</p>
       <p>CloudKit is provided by Apple. Apple processes service and account information under
       its own privacy terms. We do not receive your Apple Account email address or password.</p>
 
